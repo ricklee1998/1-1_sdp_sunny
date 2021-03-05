@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <title>Sunny Chat</title>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font: 13px Helvetica, Arial; }
+      
+
+      .chat_wrap .header { font-size: 14px; padding: 15px 0; background: #F18C7E; color: white; text-align: center;  }
+      .chat_wrap .header > button {float:left; margin-left:10px; padding: 5px; font-size: 14px; background: #d95341;border: none; border-radius:5px;}
+      .chat_wrap .chat { padding-bottom: 80px; }
+      .chat_wrap .chat ul { width: 100%; list-style: none; }
+      .chat_wrap .chat ul li { width: 100%; }
+      .chat_wrap .chat ul li.left { text-align: left; }
+      .chat_wrap .chat ul li.right { text-align: right; }
+      
+      .chat_wrap .chat ul li > div { font-size: 13px;  }
+      .chat_wrap .chat ul li > div.sender { margin: 10px 20px 0 20px; font-weight: bold; }
+      .chat_wrap .chat ul li > div.message { display: inline-block; word-break:break-all; margin: 5px 20px; max-width: 75%; border: 1px solid #888; padding: 10px; border-radius: 5px; background-color: #FCFCFC; color: #555; text-align: left; }
+      
+      .chat_wrap .input-div { position: fixed; bottom: 0; width: 100%; background-color: #FFF; text-align: center; border-top: 1px solid #F18C7E; }
+      .chat_wrap .input-div > input { width: 80%; height: 80px; border: none; padding: 10px; }
+      .chat_wrap .input-div > button {width:10%; height:80px;padding: 10px;border-radius: 15px;background: #F18C7E;border: none;}
+      .chat_wrap .videoBox {flex:1; width:20%; height:20%;}
+      .format { display: none; }
+    </style>
+  </head>
+  <body>
+    <div class="chat_wrap">
+    <!--<form action="">
+      <input id="m" autocomplete="off" /><button>Send</button>
+    </form>-->
+    <div class="header">
+        <button id="loginBtn">login</button>
+        <button id="sdpBtn">SDP</button>
+        CHAT
+    </div>
+    <div class="chat">
+        <ul>
+            <!-- 동적 생성 -->
+        </ul>
+    </div>
+    <div id="videoBox"></div><br/>
+    <div class="input-div">
+        <input id='inputMsg' value='' placeholder='Press Enter for send message.'> <br>
+        
+        <button id='sendBtn'>send</button>
+    </div>
+    <div class="chat format">
+      <ul>
+          <li>
+              <div class="sender" id="sender">
+                  <span></span>
+              </div>
+              <div class="message" id="message">
+                  <span></span>
+              </div>
+          </li>
+      </ul>
+    </div>
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    
+      
+    </div>
+    <script type="text/javascript" src="./lib/jssun.js"></script>
+  </body>
+</html>
